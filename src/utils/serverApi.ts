@@ -12,10 +12,18 @@ export const fetchChampionList = async (): Promise<Champion[]> => {
   return Object.values(data);
 };
 
-export const fetchChampionDetail = async (id: string) => {
+export const fetchChampionDetail = async (
+  id: string
+): Promise<ChampionDetail[]> => {
   const res = await fetch(`${BASE_URL}/15.5.1/data/ko_KR/champion/${id}.json`, {
-    cache: "no-store"
+    cache: "no-store",
   });
   const { data }: Record<string, ChampionDetail> = await res.json();
-  return Object.values(data)
+  return Object.values(data);
 };
+
+// export const fetchItemList = async () => {
+
+//   const res = await fetch(`${BASE_URL}/15.5.1/data/ko_KR/item.json`)
+//   const {data} : Record<strio
+// };

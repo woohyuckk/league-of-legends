@@ -17,6 +17,7 @@ const Champions = async () => {
           <div key={champion.key}>
             <Link href={`/champions/${champion.id}`}>
               <Image
+                priority
                 src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champion.image.full}`}
                 alt="Profile of Champion"
                 width={150}
