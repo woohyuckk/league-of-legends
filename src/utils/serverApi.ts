@@ -23,9 +23,9 @@ export const fetchChampionDetail = async (
   return Object.values(data);
 };
 
-export const fetchItemList = async (): Promise<[string, Item][]> => {
+export const fetchItemList = async (id: string =""): Promise<[string, Item][]> => {
   const res = await fetch(`${BASE_URL}/15.5.1/data/ko_KR/item.json`, {
-    cache: "force-cache",
+    cache: id ? "no-store" : "force-cache",
   });
   const { data }: Record<string, Item> = await res.json();
   return Object.entries(data);
