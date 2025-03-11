@@ -4,15 +4,25 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const BeaufortforLoL = localFont({
+  src: [
+    {
+      path: "../style/fonts/BeaufortforLOL-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../style/fonts/BeaufortforLOL-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../style/fonts/BeaufortforLOL-Light.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-beaufort-sans",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${BeaufortforLoL.variable} antialiased`}>
         <Header />
         <Main>{children}</Main>
       </body>
