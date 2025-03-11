@@ -1,4 +1,5 @@
 import { Champion, ChampionDetail } from "@/types/champions";
+import { Item } from "@/types/items";
 
 const BASE_URL = "https://ddragon.leagueoflegends.com/cdn";
 
@@ -22,8 +23,10 @@ export const fetchChampionDetail = async (
   return Object.values(data);
 };
 
-// export const fetchItemList = async () => {
-
-//   const res = await fetch(`${BASE_URL}/15.5.1/data/ko_KR/item.json`)
-//   const {data} : Record<strio
-// };
+export const fetchItemList = async (): Promise<[string, Item][]> => {
+  const res = await fetch(`${BASE_URL}/15.5.1/data/ko_KR/item.json`, {
+    cache: "force-cache",
+  });
+  const { data }: Record<string, Item> = await res.json();
+  return Object.entries(data);
+};

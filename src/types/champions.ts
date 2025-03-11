@@ -7,34 +7,32 @@ export interface ChampionData {
 // 챔피언 추출 데이터
 export interface Champion {
   version: Version;
-  id:      string;
-  key:     string;
-  name:    string;
-  title:   string;
-  blurb:   string;
-  info:    Info;
-  image:   Image;
-  tags:    Tag[];
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  blurb: string;
+  info: Info;
+  image: Image;
+  tags: Tag[];
   partype: string;
-  stats:   { [key: string]: number };
+  stats: { [key: string]: number };
 }
 
 export interface Image {
-  full:   string;
+  full: string;
   sprite: string;
-  group:  string;
-  x:      number;
-  y:      number;
-  w:      number;
-  h:      number;
+  group: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
 }
 
-
-
 export interface Info {
-  attack:     number;
-  defense:    number;
-  magic:      number;
+  attack: number;
+  defense: number;
+  magic: number;
   difficulty: number;
 }
 
