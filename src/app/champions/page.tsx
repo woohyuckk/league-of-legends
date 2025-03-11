@@ -3,10 +3,9 @@
  * 재검증 시간 하루(86400초)로 설정할 것
  */
 
+import ChampionCard from "@/components/champions/ChampionCard";
 import { Champion } from "@/types/champions";
 import { fetchChampionList } from "@/utils/serverApi";
-import Image from "next/image";
-import Link from "next/link";
 
 const Champions = async () => {
   const championsArr: Champion[] = await fetchChampionList();
@@ -17,21 +16,7 @@ const Champions = async () => {
       </h1>
       <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 p-8 items-center justify-start">
         {championsArr.map((champion) => {
-          return (
-            <div key={champion.key} className="border-2 border-gold-light rounded-sm">
-              <Link href={`/champions/${champion.id}`}>
-                <Image
-                  priority
-                  src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/${champion.image.full}`}
-                  alt={champion.name}
-                  width={150}
-                  height={150}
-                  className="w-full object-cover"
-                />
-                <h1 className="text-center font-bold bg-black">{champion.name}</h1>
-              </Link>
-            </div>
-          );
+          return <ChampionCard key={champion.key} champion={champion} />;
         })}
       </div>
     </section>
