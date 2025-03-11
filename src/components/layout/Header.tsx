@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full h-20 font-bold z-50 border-b-2
+      className={`fixed w-full h-20 font-bold z-50 border-b-4 border-double border-gold-light 
       ${darkMode ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
     >
       <nav className="flex items-center justify-between px-4 h-full">
