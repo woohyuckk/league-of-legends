@@ -3,6 +3,8 @@
 export interface ChampionData {
   [key: string]: Champion;
 }
+// Record<string, Champion>와 같음 
+
 // 챔피언 추출 데이터
 export interface Champion {
   id: string;
