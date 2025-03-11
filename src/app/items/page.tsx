@@ -13,6 +13,7 @@ const Items = async () => {
           <div key={item[0]} className="border-2">
             <Link href={`/items/${item[0]}`}>
               <Image
+                priority
                 src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/item/${item[0]}.png`}
                 alt="item illustation"
                 width={150}

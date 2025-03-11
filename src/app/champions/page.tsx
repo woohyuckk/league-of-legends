@@ -14,7 +14,7 @@ const Champions = async () => {
     <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4">
       {championsArr.map((champion) => {
         return (
-          <div key={champion.key}>
+          <div key={champion.key} className="border-2">
             <Link href={`/champions/${champion.id}`}>
               <Image
                 priority
@@ -22,6 +22,7 @@ const Champions = async () => {
                 alt="Profile of Champion"
                 width={150}
                 height={150}
+                className="w-full object-cover"
               />
               <h1>{champion.id}</h1>
               <p>{champion.title}</p>

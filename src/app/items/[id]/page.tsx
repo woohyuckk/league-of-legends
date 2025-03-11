@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   return {
-    title: item[1].name,
-    description: item[1].plaintext,
+    title: item ? item[1].name : "",
+    description: item ? item[1].plaintext : "",
   };
 }
 
-const ItemDetail = () => {
+const ItemDetail = () => { 
   return <div>ItemDetail</div>;
 };
 
