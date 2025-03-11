@@ -30,6 +30,7 @@ export interface ChampionDetail {
   image: {
     full: string;
   };
+  blurb: string;
   spells: ChampionSpells[];
   passive: {
     name: string;
