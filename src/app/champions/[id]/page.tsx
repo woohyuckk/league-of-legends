@@ -9,30 +9,30 @@ type Props = {
   };
 };
 
-export async function generateMetadata({ params }: Props):Promise<Metadata> {
-  const champion: ChampionDetail[]  = await fetchChampionDetail(params.id)
-  
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const champion: ChampionDetail[] = await fetchChampionDetail(params.id);
+
   return {
-    title: champion[0].title,
-    description: champion[0].blurb
-  }
+    title: `${champion[0].title}, ${champion[0].id}`,
+    description: champion[0].blurb,
+  };
 }
 
 const ChampionDetailPage = async ({ params }: Props) => {
-  const champion: ChampionDetail[]  = await fetchChampionDetail(params.id)
-
-  console.log(champion)
-  return <div>
-    <h1>{champion[0].id}</h1>
-    <p>{champion[0].name}</p>
-    <p>{champion[0].title} </p>
-    <Image src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion[0].id}_0.jpg`}
-      alt ="champion illustation"
-      fill
-      className="object-fill"
-    />
-  </div>;
+  const champion: ChampionDetail[] = await fetchChampionDetail(params.id);
+  return (
+    <div>
+      <h1>{champion[0].id}</h1>
+      <p>{champion[0].name}</p>
+      <p>{champion[0].title} </p>
+      <Image
+        src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion[0].id}_0.jpg`}
+        alt="champion illustation"
+        fill
+        className="object-contain"
+      />
+    </div>
+  );
 };
 
-
-export default ChampionDetailPage
+export default ChampionDetailPage;
