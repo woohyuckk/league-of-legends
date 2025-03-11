@@ -11,3 +11,6 @@ export const fetchChampionList = async (): Promise<Champion[]> => {
   const { data }: Record<string, Champion> = await res.json();
   return Object.values(data);
 };
+
+export const fetchChampionDetail = async() => {
+}
