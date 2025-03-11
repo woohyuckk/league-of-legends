@@ -1,4 +1,8 @@
+"use client"
+
+
 const Rotation = () => {
+  
   return <div>Rotation</div>;
 };
 
