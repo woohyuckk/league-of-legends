@@ -13,6 +13,10 @@ export async function GET() {
     },
   });
 
+  if (!rotationRes.ok) {
+    return Response.json({ error: "로테이션 데이터 fetching error" });
+  }
+
   let rotationData = await rotationRes.json();
   const chmapionListData = await fetchChampionList();
 
