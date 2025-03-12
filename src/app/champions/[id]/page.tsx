@@ -23,15 +23,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const ChampionDetailPage = async ({ params }: Props) => {
   const [champion]: ChampionDetail[] = await fetchChampionDetail(params.id);
   return (
-    <div className="flex flex-col items-center text-white p-6">
+    <div className="flex flex-col items-center p-6 text-white">
       {/* 챔피언 메인 정보 */}
-      <div className="flex flex-col md:flex-row w-full max-w-4xl items-center gap-6">
+      <div className="flex w-full max-w-4xl flex-col items-center gap-6 md:flex-row">
         <Image
           src={`${RIOT_URL.CHAMPION_SPLASH}/${champion.id}_0.jpg`}
           alt="champion illustration"
           width={500}
           height={300}
-          className="object-cover rounded-lg border border-gray-500"
+          className="rounded-lg border border-gray-500 object-cover"
         />
         <div className="flex flex-col text-left text-white">
           <h1 className="text-4xl font-bold">{champion.name}</h1>
@@ -43,10 +43,10 @@ const ChampionDetailPage = async ({ params }: Props) => {
       </div>
 
       {/* 스킬 섹션 */}
-      <div className="mt-8 w-full max-w-4xl flex flex-col items-center">
-        <div className="flex  flex-wrap w-full justify-start gap-6 items-center">
+      <div className="mt-8 flex w-full max-w-4xl flex-col items-center">
+        <div className="flex w-full flex-wrap items-center justify-start gap-6">
           {/* 패시브 */}
-          <div className="flex flex-col items-center text-center relative group">
+          <div className="group relative flex flex-col items-center text-center">
             <Image
               src={`${RIOT_URL.CHAMPION_PASSIVE}/${champion.passive.image.full}`}
               alt="Champion Passive"
@@ -55,17 +55,17 @@ const ChampionDetailPage = async ({ params }: Props) => {
               className="rounded-lg border border-gray-500"
             />
             <span className="mt-2 font-semibold">{champion.passive.name}</span>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:flex w-64 p-2 bg-black text-white text-sm rounded-lg shadow-lg mt-2 z-10">
+            <div className="absolute left-1/2 top-full z-10 mt-2 hidden w-64 -translate-x-1/2 rounded-lg bg-black p-2 text-sm text-white shadow-lg group-hover:flex">
               {champion.passive.description}
             </div>
           </div>
 
           {/* 일반 스킬들 */}
-          <div className="flex gap-4 relative flex-wrap justify-center">
+          <div className="relative flex flex-wrap justify-center gap-4">
             {champion.spells.map((spell) => (
               <div
                 key={spell.id}
-                className="group flex flex-col items-center relative"
+                className="group relative flex flex-col items-center"
               >
                 <Image
                   src={`${RIOT_URL.CHAMPION_SPELLS}/${spell.id}.png`}
@@ -75,7 +75,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
                   className="rounded-lg border border-gray-500"
                 />
                 <span className="mt-2 font-semibold">{spell.name}</span>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:flex w-64 p-2 bg-black text-white text-sm rounded-lg shadow-lg mt-2 z-10">
+                <div className="absolute left-1/2 top-full z-10 mt-2 hidden w-64 -translate-x-1/2 rounded-lg bg-black p-2 text-sm text-white shadow-lg group-hover:flex">
                   {spell.description}
                 </div>
               </div>

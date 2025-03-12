@@ -24,25 +24,25 @@ const images = [
 
 const Home = () => {
   return (
-    <section className="text-white text-4xl lg:text-6xl mt-20">
-      <h2 className="text-gold-heavy text-center font-bold">
+    <section className="mt-20 text-4xl text-white lg:text-6xl">
+      <h2 className="text-center font-bold text-gold-heavy">
         League of Legend
       </h2>
-      <div className="flex flex-col lg:flex-row  w-full min-h-screen pt-20 gap-2  p-20">
+      <div className="flex min-h-screen w-full flex-col gap-2 p-20 pt-20 lg:flex-row">
         {images.map((img, index) => (
           <Link
             key={index}
             href={img.link}
-            className="relative overflow-hidden border-8 border-gold-light border-double flex-1 transition-all duration-500 hover:flex-[3] "
+            className="relative flex-1 overflow-hidden border-8 border-double border-gold-light transition-all duration-500 hover:flex-[3]"
           >
             <Image
               src={img.src}
               alt={img.alt}
               fill
               sizes="50vw"
-              className="object-cover transition-all duration-500 "
+              className="object-cover transition-all duration-500"
             />
-            <span className="absolute bottom-5 text-white font-bold block w-full text-center text-4xl  py-2  ">
+            <span className="absolute bottom-5 block w-full py-2 text-center text-4xl font-bold text-white">
               {img.text}
             </span>
           </Link>

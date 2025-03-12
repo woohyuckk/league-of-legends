@@ -3,7 +3,7 @@ const Main = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <main className="w-full min-h-screen pt-20">{children}</main>;
+  return <main className="min-h-screen w-full pt-20">{children}</main>;
 };
 
 export default Main;

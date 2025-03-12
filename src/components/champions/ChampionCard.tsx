@@ -8,7 +8,7 @@ type ChampionCardProps = {
 
 const ChampionCard = ({ champion }: ChampionCardProps) => {
   return (
-    <div key={champion.key} className="border-2 border-gold-light rounded-sm">
+    <div key={champion.key} className="rounded-sm border-2 border-gold-light">
       <Link href={`/champions/${champion.id}`}>
         <Image
           priority
@@ -18,7 +18,7 @@ const ChampionCard = ({ champion }: ChampionCardProps) => {
           height={150}
           className="w-full object-cover"
         />
-        <h1 className="text-center font-bold bg-black">{champion.name}</h1>
+        <h1 className="bg-black text-center font-bold">{champion.name}</h1>
       </Link>
     </div>
   );
