@@ -35,7 +35,9 @@ const ChampionDetailPage = async ({ params }: Props) => {
         />
         <div className="flex flex-col text-left text-white">
           <h1 className="text-4xl font-bold">{champion.name}</h1>
-          <p className="text-xl font-semibold text-gray-300">{champion.title}</p>
+          <p className="text-xl font-semibold text-gray-300">
+            {champion.title}
+          </p>
           <p className="mt-2 text-sm text-white">{champion.blurb}</p>
         </div>
       </div>
@@ -61,7 +63,10 @@ const ChampionDetailPage = async ({ params }: Props) => {
           {/* 일반 스킬들 */}
           <div className="flex gap-4 relative flex-wrap justify-center">
             {champion.spells.map((spell) => (
-              <div key={spell.id} className="group flex flex-col items-center relative">
+              <div
+                key={spell.id}
+                className="group flex flex-col items-center relative"
+              >
                 <Image
                   src={`${RIOT_URL.CHAMPION_SPELLS}/${spell.id}.png`}
                   alt={spell.name}
