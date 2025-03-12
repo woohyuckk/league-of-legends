@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
+import Providers from "./providers";
 
 const BeaufortforLoL = localFont({
   src: [
@@ -38,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang={"ko"}>
       <body className={`${BeaufortforLoL.variable} antialiased`}>
-        <Header />
-        <Main>{children}</Main>
+        <Providers>
+          <Header />
+          <Main>{children}</Main>
+        </Providers>
       </body>
     </html>
   );
