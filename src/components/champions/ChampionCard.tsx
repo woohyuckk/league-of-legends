@@ -2,13 +2,11 @@ import { Champion } from "@/types/champions";
 import Image from "next/image";
 import Link from "next/link";
 
-
 type ChampionCardProps = {
-  champion : Champion
-}
+  champion: Champion;
+};
 
-
-const ChampionCard = ({champion}: ChampionCardProps) => {
+const ChampionCard = ({ champion }: ChampionCardProps) => {
   return (
     <div key={champion.key} className="border-2 border-gold-light rounded-sm">
       <Link href={`/champions/${champion.id}`}>

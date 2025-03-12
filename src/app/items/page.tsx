@@ -7,7 +7,7 @@ const Items = async () => {
   const items: [string, Item][] = await fetchItemList();
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 p-8">
+    <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 p-8 text-white">
       {items.map((item) => {
         return (
           <div key={item[0]} className="border-2">
