@@ -26,8 +26,9 @@ const ItemCard = ({ item }: ItemCardProps) => {
           {item[1].name}
         </span>
 
-        <span className="flex justify-center bg-black text-center font-bold">
-          <FaCoins className="text-gold-heavy" /> {gold.total}
+        <span className="flex items-center justify-center bg-black text-center font-bold">
+          <FaCoins className="mr-2 text-gold-heavy" />
+          <span className="text-center text-xl"> {gold.total}</span>
         </span>
       </Link>
     </div>
