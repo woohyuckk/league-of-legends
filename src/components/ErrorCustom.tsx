@@ -1,3 +1,5 @@
+"use client"
+
 import { AlertTriangle, Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { startTransition } from "react";
@@ -8,7 +10,7 @@ export interface ErrorProps {
 }
 
 const ErrorCustom = ({ error, reset }: ErrorProps) => {
-  const router = useRouter();
+  const router =  useRouter();
 
   const handleRetry = () => {
     startTransition(() => {
@@ -18,7 +20,7 @@ const ErrorCustom = ({ error, reset }: ErrorProps) => {
   };
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-gray-50">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
       <AlertTriangle className="mb-4 h-20 w-20 text-red-500" />
       <h1 className="mb-2 text-3xl font-semibold">
         죄송합니다. 요청하신 작업을 처리하는 중 문제가 발생했습니다.

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const ChampionDetailPage = async ({ params }: Props) => {
   const [champion]: ChampionDetail[] = await fetchChampionDetail(params.id);
   return (
-    <div className="flex flex-col items-center my-20 p-6 text-white">
+    <div className="my-20 flex flex-col items-center p-6 text-white">
       {/* 챔피언 메인 정보 */}
       <div className="flex w-full max-w-4xl flex-col items-center gap-6 md:flex-row">
         <Image

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type ChampionCardProps = {
-  champion: Champion;
+  champion: Pick<Champion,  "key"|"id"|"image"|"name" >;
 };
 
 const ChampionCard = ({ champion }: ChampionCardProps) => {
