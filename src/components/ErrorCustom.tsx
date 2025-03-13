@@ -7,7 +7,7 @@ export interface ErrorProps {
   reset: () => void;
 }
 
-export default function Error({ error, reset }: ErrorProps) {
+const ErrorCustom = ({ error, reset }: ErrorProps) => {
   const router = useRouter();
 
   const handleRetry = () => {
@@ -23,7 +23,7 @@ export default function Error({ error, reset }: ErrorProps) {
       <h1 className="mb-2 text-3xl font-semibold">
         죄송합니다. 요청하신 작업을 처리하는 중 문제가 발생했습니다.
       </h1>
-      <p className="mb-6 text-gray-600">{error.message}</p>
+      <p className="mb-6 text-gray-600"> Error : {error.message}</p>
       <div className="flex gap-3">
         <button
           onClick={handleRetry}
@@ -40,4 +40,6 @@ export default function Error({ error, reset }: ErrorProps) {
       </div>
     </div>
   );
-}
+};
+
+export default ErrorCustom;

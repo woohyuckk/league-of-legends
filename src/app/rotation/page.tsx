@@ -2,6 +2,7 @@
 
 import { getChampionRotation } from "@/utils/riotApi";
 import { useQuery } from "@tanstack/react-query";
+import Loading from "../loading";
 
 const Rotation = () => {
   const {
@@ -13,7 +14,7 @@ const Rotation = () => {
     queryFn: getChampionRotation,
   });
 
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <Loading />;
   if (isError) return <div>Error...</div>;
 
   console.log(rotationChampions);

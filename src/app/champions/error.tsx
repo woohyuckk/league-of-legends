@@ -1,20 +1,14 @@
-// ~/error.tsx
-"use client"; // ✅Error component 는 꼭 클라이언트 컴포넌트여야한다는 점 !!
+"use client";
+import ErrorCustom from "@/components/ErrorCustom";
 
-
-
+// ✅Error component 는 꼭 클라이언트 컴포넌트여야한다는 점 !!
 
 export default function Error({
   error,
   reset,
 }: {
-  error: Error ;
+  error: Error;
   reset: () => void;
 }) {
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>{error.message}</button>
-    </div>
-  );
+  return <ErrorCustom error={error} reset={reset} />;
 }
