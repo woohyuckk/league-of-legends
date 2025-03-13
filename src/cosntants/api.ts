@@ -9,4 +9,6 @@ export const RIOT_URL = {
     "https://ddragon.leagueoflegends.com/cdn/img/champion/splash",
   CHAMPION_PASSIVE:
     "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/passive",
+  ITEM_IMAGE: "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/item",
+  CHAMPION_IMAGE: "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion",
 };

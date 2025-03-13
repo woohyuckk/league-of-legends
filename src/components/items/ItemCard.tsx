@@ -1,3 +1,4 @@
+import { RIOT_URL } from "@/cosntants/api";
 import { Gold, Item } from "@/types/items";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,7 @@ const ItemCard = ({ item }: ItemCardProps) => {
       <Link href={`/items/${item[0]}`}>
         <Image
           priority
-          src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/item/${item[0]}.png`}
+          src={`${RIOT_URL.ITEM_IMAGE}/${item[0]}.png`}
           alt="item illustation"
           width={150}
           height={150}
