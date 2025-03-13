@@ -33,14 +33,14 @@ const Home = () => {
           <Link
             key={index}
             href={img.link}
-            className="relative flex-1 overflow-hidden border-8 border-double border-gold-light transition-all duration-500 hover:flex-[3]"
+            className="group relative z-0 flex-1 overflow-hidden border-8 border-double border-gold-light transition-all duration-300 hover:z-50 hover:flex-[3]"
           >
             <Image
               src={img.src}
               alt={img.alt}
               fill
               sizes="50vw"
-              className="object-cover transition-all duration-500"
+              className="object-cover transition-all duration-300"
             />
             <span className="absolute bottom-5 block w-full py-2 text-center text-4xl font-bold text-white">
               {img.text}
