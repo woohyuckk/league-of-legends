@@ -40,7 +40,7 @@ const Home = () => {
               alt={img.alt}
               fill
               sizes="50vw"
-              className=" transition-all duration-300"
+              className="transition-all duration-300"
             />
             <span className="absolute bottom-5 block w-full py-2 text-center text-4xl font-bold text-white">
               {img.text}

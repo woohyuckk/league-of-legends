@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { AlertTriangle, Home } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -10,7 +10,7 @@ export interface ErrorProps {
 }
 
 const ErrorCustom = ({ error, reset }: ErrorProps) => {
-  const router =  useRouter();
+  const router = useRouter();
 
   const handleRetry = () => {
     startTransition(() => {

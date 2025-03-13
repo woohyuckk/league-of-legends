@@ -1,8 +1,3 @@
-/**
- * incremental Static Regeneration (ISR) 방식으로 구현하기
- * 재검증 시간 하루(86400초)로 설정할 것
- */
-
 import ChampionCard from "@/components/champions/ChampionCard";
 import { Champion } from "@/types/champions";
 import { fetchChampionList } from "@/utils/serverApi";
