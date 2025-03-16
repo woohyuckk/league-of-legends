@@ -11,7 +11,7 @@ const RotationList = () => {
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ["rotationChampions"],
+    queryKey: ["rotation"],
     queryFn: getChampionRotation,
   });
 
