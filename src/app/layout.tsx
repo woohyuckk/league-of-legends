@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
 import Providers from "./providers";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const BeaufortforLoL = localFont({
   src: [
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <Main>{children}</Main>
+          <ReactQueryDevtools initialIsOpen={false} />
         </Providers>
       </body>
     </html>
