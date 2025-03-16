@@ -1,4 +1,4 @@
-import { RIOT_URL } from "@/cosntants/api";
+import { RIOT_URL } from "@/constants/api";
 import { ChampionDetail } from "@/types/champions";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import { Metadata } from "next";

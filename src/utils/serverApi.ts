@@ -1,6 +1,6 @@
 "use server";
 
-import { RIOT_URL } from "@/cosntants/api";
+import { RIOT_URL } from "@/constants/api";
 import { Champion, ChampionDetail } from "@/types/champions";
 import { Item } from "@/types/items";
 

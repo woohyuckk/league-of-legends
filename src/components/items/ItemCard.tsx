@@ -1,4 +1,4 @@
-import { RIOT_URL } from "@/cosntants/api";
+import { RIOT_URL } from "@/constants/api";
 import { Gold, Item } from "@/types/items";
 import Image from "next/image";
 import Link from "next/link";

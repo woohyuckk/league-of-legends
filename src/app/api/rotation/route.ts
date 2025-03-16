@@ -1,4 +1,4 @@
-import { RIOT_URL } from "@/cosntants/api";
+import { RIOT_URL } from "@/constants/api";
 import { fetchChampionList } from "@/utils/serverApi";
 
 export async function GET() {
@@ -23,7 +23,7 @@ export async function GET() {
   rotationData = rotationData.freeChampionIds;
 
   const rotationChampions = rotationData.map((championId: number) =>
-    chmapionListData.find((champion) => Number(champion.key) === championId)
+    chmapionListData.find((champion) => Number(champion.key) === championId),
   );
 
   return Response.json(rotationChampions);
