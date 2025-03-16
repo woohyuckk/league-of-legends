@@ -17,6 +17,9 @@ export const fetchChampionList = async (): Promise<Champion[]> => {
       revalidate: 86400,
     },
   });
+  if (!res.ok) {
+    throw new Error("챔피언 목록을 불러오는데 실패하였습니다.");
+  }
   const { data }: { data: Record<string, Champion> } = await res.json();
   return Object.values(data);
 };
@@ -31,6 +34,9 @@ export const fetchChampionDetail = async (
       cache: "no-store",
     },
   );
+  if (!res.ok) {
+    throw new Error("챔피언 상세정보를 불러오는데 실패하였습니다.");
+  }
   const { data }: { data: Record<string, ChampionDetail> } = await res.json();
   return Object.values(data);
 };
@@ -42,6 +48,10 @@ export const fetchItemList = async (
   const res = await fetch(`${RIOT_URL.CHAMPIONS_API(version)}/item.json`, {
     cache: id ? "no-store" : "force-cache",
   });
+
+  if (!res.ok) {
+    throw new Error("아이템 목록을 불러오는데 실패하였습니다.");
+  }
   const { data }: { data: Record<string, Item> } = await res.json();
   return Object.entries(data);
 };
