@@ -28,7 +28,7 @@ const Home = () => {
       <h2 className="text-center font-bold text-gold-heavy">
         League of Legend
       </h2>
-      <div className="flex min-h-screen w-full flex-col gap-2 p-20 pt-20 lg:flex-row">
+      <div className="flex min-h-screen  2xl:w-[80%] xl:mx-auto xl:max-h-[960px] w-full flex-col gap-2 p-20 pt-20 lg:flex-row ">
         {images.map((img, index) => (
           <Link
             key={index}

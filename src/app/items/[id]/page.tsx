@@ -30,10 +30,10 @@ const ItemDetail = async ({ params }: ParamsProps) => {
 
   console.log(item ? item[1] : "");
   return (
-    <div className="mx-auto my-56 w-full max-w-sm overflow-hidden rounded-lg  shadow-lg">
+    <div className="mx-auto my-56 w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
       {item && (
         <div>
-          <div className="relative  w-full aspect-[16/9]">
+          <div className="relative aspect-[16/9] w-full">
             <Image
               priority
               src={`https://ddragon.leagueoflegends.com/cdn/15.5.1/img/item/${item[0]}.png`}
@@ -42,11 +42,13 @@ const ItemDetail = async ({ params }: ParamsProps) => {
               className="object-contain"
             />
           </div>
-          <div className="p-4 flex flex-col justify-center items-center">
-            <h1 className="mb-2 text-xl font-bold md:text-2xl text-white">
+          <div className="flex flex-col items-center justify-center p-4">
+            <h1 className="mb-2 text-xl font-bold text-white md:text-2xl">
               {item[1].name}
             </h1>
-            <p className="mb-2 text-red-500 font-bold">{removeTag(item[1].plaintext)}</p>
+            <p className="mb-2 font-bold text-red-500">
+              {removeTag(item[1].plaintext)}
+            </p>
             <p className="mb-4 font-bold text-white">
               {removeTag(item[1].description)}
             </p>

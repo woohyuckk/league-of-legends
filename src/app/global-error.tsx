@@ -4,7 +4,7 @@ import { ErrorProps } from "@/components/ErrorCustom";
 import { AlertTriangle } from "lucide-react";
 import "./globals.css";
 
-const GlobalError = ({ error, reset }: ErrorProps) => {
+const GlobalError = ({ error, reset = () => {} }: ErrorProps) => {
   const handleRetry = () => {
     reset();
   };

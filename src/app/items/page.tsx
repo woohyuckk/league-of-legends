@@ -8,7 +8,7 @@ const Items = async () => {
   const items: [string, Item][] = await fetchItemList();
 
   return (
-    <section className="px-10 py-20 text-white lg:px-20">
+    <section className="px-10 py-20 text-white lg:px-20 " >
       <h1 className="px-10 text-4xl font-bold text-gold-heavy lg:text-center lg:text-6xl">
         아이템 목록
       </h1>
