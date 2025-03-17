@@ -1,4 +1,4 @@
-import Loading from "../loading";
+import Loading from "../../components/Loading";
 import { Suspense } from "react";
 import {
   dehydrate,

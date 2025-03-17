@@ -2,7 +2,7 @@ import ItemCard from "@/components/items/ItemCard";
 import { Item } from "@/types/items";
 import { fetchItemList } from "@/utils/serverApi";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../components/Loading";
 
 const Items = async () => {
   const items: [string, Item][] = await fetchItemList();

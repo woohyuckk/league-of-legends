@@ -1,16 +1,13 @@
 import { Item } from "@/types/items";
+import { ParamsProps } from "@/types/params";
 import { fetchItemList } from "@/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+export async function generateMetadata({ params }: ParamsProps): Promise<Metadata> {
   const items: [string, Item][] = await fetchItemList(params.id);
   const item = items.find((item) => {
     return item[0] === params.id;
@@ -22,12 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const ItemDetail = async ({ params }: Props) => {
-  const items: [string, Item][] = await fetchItemList();
+const ItemDetail = async ({ params }: ParamsProps) => {
+  const items: [string, Item][] = await fetchItemList(params.id);
   const item = items.find((item) => {
     return item[0] === params.id;
   });
-  console.log(item);
   return (
     <div>
       {item && (

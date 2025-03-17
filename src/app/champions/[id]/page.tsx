@@ -1,17 +1,14 @@
 import { RIOT_URL } from "@/constants/api";
 import { ChampionDetail } from "@/types/champions";
+import { ParamsProps } from "@/types/params";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+export async function generateMetadata({ params }: ParamsProps): Promise<Metadata> {
   const champion: ChampionDetail[] = await fetchChampionDetail(params.id);
 
   return {
@@ -20,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const ChampionDetailPage = async ({ params }: Props) => {
+const ChampionDetailPage = async ({ params }: ParamsProps) => {
   const [champion]: ChampionDetail[] = await fetchChampionDetail(params.id);
   return (
     <div className="my-20 flex flex-col items-center p-6 text-white">
