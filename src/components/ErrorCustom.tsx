@@ -6,10 +6,10 @@ import { startTransition } from "react";
 
 export interface ErrorProps {
   error: Error;
-  reset: () => void;
+  reset?: () => void;
 }
 
-const ErrorCustom = ({ error, reset }: ErrorProps) => {
+const ErrorCustom = ({ error, reset = () => {} }: ErrorProps) => {
   const router = useRouter();
 
   const handleRetry = () => {
