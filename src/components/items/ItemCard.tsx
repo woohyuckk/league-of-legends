@@ -1,5 +1,6 @@
 import { RIOT_URL } from "@/constants/api";
 import { Gold, Item } from "@/types/items";
+import { removeTag } from "@/utils/removeTag";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCoins } from "react-icons/fa";
@@ -23,8 +24,8 @@ const ItemCard = ({ item }: ItemCardProps) => {
           height={150}
           className="w-full object-cover"
         />
-        <span className="block bg-black text-center font-bold">
-          {item[1].name}
+        <span className="block truncate whitespace-pre-wrap bg-black text-center font-bold">
+          {removeTag(item[1].name)}
         </span>
 
         <span className="flex items-center justify-center bg-black text-center font-bold">

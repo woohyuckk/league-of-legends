@@ -30,11 +30,14 @@ export default function Header() {
         </div>
 
         <div className="flex w-full items-center justify-between gap-4 md:w-auto">
-          <button onClick={() => setDarkMode(!darkMode)}>
+          <button
+            aria-label="dark mode toggle"
+            onClick={() => setDarkMode(!darkMode)}
+          >
             {darkMode ? (
-              <BsSunFill className="text-white" />
+              <BsSunFill aria-label="light-mode" className="text-white" />
             ) : (
-              <BsMoonFill className="text-[#111]" />
+              <BsMoonFill aria-label="dark-mode" className="text-[#111]" />
             )}
           </button>
 

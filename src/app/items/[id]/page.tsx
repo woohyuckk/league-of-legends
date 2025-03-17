@@ -44,7 +44,7 @@ const ItemDetail = async ({ params }: ParamsProps) => {
           </div>
           <div className="flex flex-col items-center justify-center p-4">
             <h1 className="mb-2 text-xl font-bold text-white md:text-2xl">
-              {item[1].name}
+              {removeTag(item[1].name)}
             </h1>
             <p className="mb-2 font-bold text-red-500">
               {removeTag(item[1].plaintext)}
