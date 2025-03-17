@@ -12,7 +12,6 @@ const ChampionCard = ({ champion }: ChampionCardProps) => {
     <div key={champion.key} className="rounded-sm border-2 border-gold-light">
       <Link href={`/champions/${champion.id}`}>
         <Image
-          priority
           src={`${RIOT_URL.CHAMPION_IMAGE}/${champion.image.full}`}
           alt={champion.name}
           width={150}

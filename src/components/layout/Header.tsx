@@ -41,7 +41,11 @@ export default function Header() {
             )}
           </button>
 
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            aria-label="menu-btn"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>

@@ -17,7 +17,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
     <div key={item[0]} className="rounded-sm border-2 border-gold-light">
       <Link href={`/items/${item[0]}`}>
         <Image
-          priority
           src={`${RIOT_URL.ITEM_IMAGE}/${item[0]}.png`}
           alt="item illustation"
           width={150}
