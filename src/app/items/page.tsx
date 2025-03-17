@@ -1,8 +1,8 @@
 import ItemCard from "@/components/items/ItemCard";
+import Loading from "@/components/Loading";
 import { Item } from "@/types/items";
 import { fetchItemList } from "@/utils/serverApi";
 import { Suspense } from "react";
-import Loading from "../../components/Loading";
 
 const Items = async () => {
   const items: [string, Item][] = await fetchItemList();

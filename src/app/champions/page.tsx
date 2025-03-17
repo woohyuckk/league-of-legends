@@ -1,8 +1,8 @@
 import ChampionCard from "@/components/champions/ChampionCard";
+import Loading from "@/components/Loading";
 import { Champion } from "@/types/champions";
 import { fetchChampionList } from "@/utils/serverApi";
 import { Suspense } from "react";
-import Loading from "../../components/Loading";
 
 const Champions = async () => {
   const championsArr: Champion[] = await fetchChampionList();

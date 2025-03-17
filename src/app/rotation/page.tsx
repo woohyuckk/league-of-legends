@@ -1,4 +1,3 @@
-import Loading from "../../components/Loading";
 import { Suspense } from "react";
 import {
   dehydrate,
@@ -7,6 +6,7 @@ import {
 } from "@tanstack/react-query";
 import { getRotationList } from "@/utils/serverApi";
 import RotationList from "./RotationList";
+import Loading from "@/components/Loading";
 
 /**
  * 기존에 만들어 놓았던 getChampionRotation(route handler)함수를 재활용하려고 했으나, 서버에서 호출하면 error가 발생
