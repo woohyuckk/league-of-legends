@@ -5,21 +5,19 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import { useTheme } from "next-themes";
-// import { useThemeStore } from "@/store/themeStore";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // const { theme, toggleTheme } = useThemeStore((state) => state);
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const openMenu = useCallback(() => {
+  const openMenu = () => {
     setIsOpen(!isOpen);
-  }, []);
+  };
 
   return (
     <header className="text-bl fixed z-50 h-20 w-full border-b-4 border-double border-gold-light bg-slate-400 font-bold dark:bg-black dark:text-white">

@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
 import Providers from "./providers";
-import ThemeProviders from "@/components/providers/ThemeProvider";
 import { ThemeProvider } from "next-themes";
 
 const BeaufortforLoL = localFont({
