@@ -14,7 +14,7 @@ export async function GET() {
   });
 
   if (!rotationRes.ok) {
-    return Response.json({ error: "로테이션 데이터 fetching error" });
+    return Response.json({ error: "로테이션 챔피언 목록을 불러오는데 실패하였습니다." });
   }
 
   let rotationData = await rotationRes.json();

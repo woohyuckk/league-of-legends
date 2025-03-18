@@ -1,17 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
+import { useThemeStore } from "@/store/themeStore";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme, toggleTheme } = useThemeStore((state) => state);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   return (
     <header
-      className={`fixed z-50 h-20 w-full border-b-4 border-double border-gold-light font-bold ${darkMode ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
+      className={`fixed z-50 h-20 w-full border-b-4 border-double border-gold-light font-bold ${theme === "light" ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
     >
       <nav className="flex h-full items-center justify-between px-4">
         <div className="hidden gap-8 md:flex">
@@ -30,11 +35,8 @@ export default function Header() {
         </div>
 
         <div className="flex w-full items-center justify-between gap-4 md:w-auto">
-          <button
-            aria-label="dark mode toggle"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? (
+          <button aria-label="dark mode toggle" onClick={toggleTheme}>
+            {theme === "light" ? (
               <BsSunFill aria-label="light-mode" className="text-white" />
             ) : (
               <BsMoonFill aria-label="dark-mode" className="text-[#111]" />
@@ -44,7 +46,7 @@ export default function Header() {
           <button
             aria-label="menu-btn"
             className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleTheme}
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -53,7 +55,7 @@ export default function Header() {
 
       {isOpen && (
         <div
-          className={`flex flex-col gap-4 px-4 py-4 md:hidden ${darkMode ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
+          className={`flex flex-col gap-4 px-4 py-4 md:hidden ${theme === "light" ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
         >
           <Link
             href="/"
