@@ -28,7 +28,7 @@ const Home = () => {
       <h2 className="text-center font-bold text-gold-heavy">
         League of Legend
       </h2>
-      <div className="flex flex-col w-full min-h-screen lg:min-h-[500px] max-h-[600px] gap-2 p-20 pt-20 lg:flex-row">
+      <div className="flex max-h-[600px] min-h-screen w-full flex-col gap-2 p-20 pt-20 lg:min-h-[500px] lg:flex-row">
         {images.map((img, index) => (
           <Link
             key={index}
@@ -36,6 +36,7 @@ const Home = () => {
             className="group relative z-0 flex-1 overflow-hidden border-8 border-double border-gold-light transition-all duration-300 hover:z-50 hover:flex-[3]"
           >
             <Image
+              priority
               src={img.src}
               alt={img.alt}
               fill
