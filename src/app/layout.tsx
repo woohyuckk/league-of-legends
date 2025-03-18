@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
 import Providers from "./providers";
+import ThemeProviders from "@/components/providers/ThemeProvider";
 
 const BeaufortforLoL = localFont({
   src: [
@@ -37,11 +38,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={"ko"}>
+    <html lang={"ko"} suppressHydrationWarning>
       <body className={`${BeaufortforLoL.variable} antialiased`}>
         <Providers>
-          <Header />
-          <Main>{children}</Main>
+          <ThemeProviders>
+            <Header />
+            <Main>{children}</Main>
+          </ThemeProviders>
         </Providers>
       </body>
     </html>

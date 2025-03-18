@@ -23,8 +23,14 @@ body {
   font-family: var(--font-beaufort-san);
 }
 
+.dark {
+  --backgound: var(--color-black);
+  --foreground: var(var(--color-white));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+

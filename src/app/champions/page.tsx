@@ -4,6 +4,12 @@ import { Champion } from "@/types/champions";
 import { fetchChampionList } from "@/utils/serverApi";
 import { Suspense } from "react";
 
+/**
+ *  ISR: Revalidate 86400초(하루)
+ * @function : fetchChampionList()
+ * @returns  : Champion[]
+ */
+
 const Champions = async () => {
   const championsArr: Champion[] = await fetchChampionList();
   return (

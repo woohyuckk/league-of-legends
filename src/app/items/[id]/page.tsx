@@ -7,6 +7,13 @@ import Image from "next/image";
 import React from "react";
 import { FaCoins } from "react-icons/fa";
 
+/**
+ * 
+ * @function renameTag : plaintext에 포함된 HTML <...> 태그들을 제거하는 함수 ex)<Silver>바닷잎 코인</Silver> 
+ * @returns string: "바닷잎 코인" 
+ * @param item : [string, item] item의 0번째 index는 챔피언의 고유한 id를 반환합니다. ex)"1011" - 아이템 번호 
+ */
+
 export async function generateMetadata({
   params,
 }: ParamsProps): Promise<Metadata> {
@@ -28,7 +35,6 @@ const ItemDetail = async ({ params }: ParamsProps) => {
     return item[0] === params.id;
   });
 
-  console.log(item ? item[1] : "");
   return (
     <div className="mx-auto my-56 w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
       {item && (
