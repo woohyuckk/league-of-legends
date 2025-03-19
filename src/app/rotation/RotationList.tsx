@@ -1,23 +1,19 @@
 "use client";
 
 import ChampionCard from "@/components/champions/ChampionCard";
-import ErrorCustom from "@/components/ErrorCustom";
 import { getChampionRotation } from "@/utils/riotApi";
 import { useQuery } from "@tanstack/react-query";
 
 /**
- * isLoading은 suspense로 fetch 발생하는 promise를 catch하여 Loading을 처리해주고 있기 때문에 불필요하다고 생각하여 제거하였습니다.
- * error또한 error.tsx에서 처리해주지만 혹시 error.tsx에서 발생하는 에러를 캐치하지
- * getChampionRotation: Route handler를 이용한 호출방식입니다.
+ * CSR 방식, Route Handler 사용
+ * getChampionRotation:  prefetch를 사용하여 cache 활용 
  */
 
 const RotationList = () => {
-  const { data: rotationChampions, error } = useQuery({
+  const { data: rotationChampions } = useQuery({
     queryKey: ["rotation"],
     queryFn: getChampionRotation,
   });
-
-  if (error) return <ErrorCustom error={error} />;
 
   return (
     <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] items-center justify-start gap-4 p-8 text-white">

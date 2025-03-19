@@ -11,7 +11,7 @@ import { FaCoins } from "react-icons/fa";
  * 
  * @function renameTag : plaintext에 포함된 HTML <...> 태그들을 제거하는 함수 ex)<Silver>바닷잎 코인</Silver> 
  * @returns string: "바닷잎 코인" 
- * @param item : [string, item] item의 0번째 index는 챔피언의 고유한 id를 반환합니다. ex)"1011" - 아이템 번호 
+ * @param item : [string, item] item의 0번째 index는 id ex)"1011" - 아이템 번호,  
  */
 
 export async function generateMetadata({

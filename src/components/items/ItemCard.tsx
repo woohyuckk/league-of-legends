@@ -5,7 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCoins } from "react-icons/fa";
 
-// tuple 타입 정의
+/**
+ *  @param Item : [id, item] ex) id: ITEM 번호 "1001", item : 아이템 상세 정보
+ */
 interface ItemCardProps {
   item: [string, Item];
 }

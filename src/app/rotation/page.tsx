@@ -9,8 +9,8 @@ import RotationList from "./RotationList";
 import Loading from "@/components/Loading";
 
 /**
- * 기존에 만들어 놓았던 getChampionRotation(route handler)함수를 재활용하려고 했으나, 서버에서 호출하면 error가 발생
- * getRotationList라는 server action 함수를 따로 분리하여 호출하였습니다.
+ * @function getRotationList  
+ * @returns Champion[]
  */
 
 const Rotation = async () => {
