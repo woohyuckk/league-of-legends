@@ -61,7 +61,7 @@ export default function Header() {
 
       {isOpen && (
         <div
-          className={`flex flex-col gap-4 px-4 py-4 md:hidden ${theme === "light" ? "bg-[#111] text-white" : "bg-slate-400 text-[#111]"}`}
+          className={`flex flex-col gap-4 px-4 py-4 md:hidden bg-slate-400 font-bold dark:bg-black dark:text-white `}
         >
           <Link href="/" className="text-center" onClick={openMenu}>
             홈
